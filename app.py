@@ -7,10 +7,7 @@ def analyze_review(review):
     bert_result = predict_bert(review)
     llm_result = predict_llm(review)
 
-    return {
-        "BERT Sentiment": bert_result,
-        "LLM Sentiment": llm_result
-    }
+    return bert_result, llm_result
 
 iface = gr.Interface(
     fn=analyze_review,
